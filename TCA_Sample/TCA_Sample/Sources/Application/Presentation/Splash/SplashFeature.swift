@@ -30,9 +30,9 @@ struct SplashFeature {
                 return .run { await $0(.goToMain) }
             case .goToMain:
                 guard let appDelegate = state.appDelegate else { return .none }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
 //                    appDelegate.resetRootViewController()
-                    appDelegate.resetRootViewController(rootVc: UIHostingController(rootView: MainUI()))
+                    appDelegate.resetRootViewController(rootVc: UIHostingController(rootView: SearchUI()))
                 }
                 return .none
             }
